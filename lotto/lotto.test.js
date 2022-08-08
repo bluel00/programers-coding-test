@@ -3,13 +3,13 @@ function getLottoRank(lottos, winNumbers) {
 }
 
 function getTopRank(lottos, winNumbers) {
-  return getRankOfMatchingNumbers(
+  return getRankByMatchingNumbers(
     getMatchNumbers(lottos, winNumbers) + getNumberOfZero(lottos)
   );
 }
 
 function getLowestRank(lottos, winNumbers) {
-  return getRankOfMatchingNumbers(getMatchNumbers(lottos, winNumbers));
+  return getRankByMatchingNumbers(getMatchNumbers(lottos, winNumbers));
 }
 
 function getMatchNumbers(lottos, winNumbers) {
@@ -17,7 +17,7 @@ function getMatchNumbers(lottos, winNumbers) {
     .length;
 }
 
-function getRankOfMatchingNumbers(count) {
+function getRankByMatchingNumbers(count) {
   return (
     {
       2: 5,
@@ -71,14 +71,14 @@ describe("getMatchNumbers", () => {
   });
 });
 
-describe("getRankOfMatchingNumbers", () => {
+describe("getRankByMatchingNumbers", () => {
   it("당첨 개수를 입력하면 순위를 리턴한다", () => {
-    expect(getRankOfMatchingNumbers(0)).toBe(6);
-    expect(getRankOfMatchingNumbers(1)).toBe(6);
-    expect(getRankOfMatchingNumbers(2)).toBe(5);
-    expect(getRankOfMatchingNumbers(3)).toBe(4);
-    expect(getRankOfMatchingNumbers(4)).toBe(3);
-    expect(getRankOfMatchingNumbers(5)).toBe(2);
-    expect(getRankOfMatchingNumbers(6)).toBe(1);
+    expect(getRankByMatchingNumbers(0)).toBe(6);
+    expect(getRankByMatchingNumbers(1)).toBe(6);
+    expect(getRankByMatchingNumbers(2)).toBe(5);
+    expect(getRankByMatchingNumbers(3)).toBe(4);
+    expect(getRankByMatchingNumbers(4)).toBe(3);
+    expect(getRankByMatchingNumbers(5)).toBe(2);
+    expect(getRankByMatchingNumbers(6)).toBe(1);
   });
 });
